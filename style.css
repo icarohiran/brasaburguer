@@ -1,0 +1,656 @@
+/* Variáveis CSS para configurações dinâmicas */
+:root {
+    --primary-color: #FF4B2B;
+    --secondary-color: #1F1F1F;
+    --text-color: #FFFFFF;
+    --background-color: #000000;
+    --accent-color: #FF6B4B;
+    --dark-color: #121212;
+    --font-size-base: 1rem;
+    --layout-type: container;
+}
+
+/* Configurações de fonte */
+body {
+    font-size: var(--font-size-base);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Banner de Cookies - Conformidade LGPD */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+    border-top: 2px solid var(--primary-color);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cookie-text {
+    flex: 1;
+}
+
+.cookie-text h5 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.cookie-text p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.cookie-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cookie-buttons .btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Responsividade do banner de cookies */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cookie-text h5 {
+        font-size: 1rem;
+    }
+    
+    .cookie-text p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookie-banner {
+        padding: 0.8rem;
+    }
+    
+    .cookie-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cookie-buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Navbar personalizada */
+.navbar {
+    background-color: var(--secondary-color) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--text-color) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagens/banner2.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Cards de produtos e promoções */
+.produto-card,
+.promo-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.produto-card:hover,
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Botões personalizados */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+/* Carrinho flutuante */
+.carrinho-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.carrinho-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+}
+
+.carrinho-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Carrinho lateral */
+.carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.carrinho-lateral.aberto {
+    right: 0;
+}
+
+.carrinho-header {
+    padding: 1rem;
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fechar-carrinho {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+#itens-carrinho {
+    padding: 1rem;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carrinho-footer {
+    position: sticky;
+    bottom: 0;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-finalizar {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-finalizar:hover {
+    background-color: var(--accent-color);
+}
+
+/* Configurações visuais */
+.paleta-option,
+.fonte-option,
+.layout-option {
+    cursor: pointer;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.paleta-option:hover,
+.fonte-option:hover,
+.layout-option:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 75, 43, 0.1);
+}
+
+.paleta-option.active,
+.fonte-option.active,
+.layout-option.active {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 75, 43, 0.2);
+}
+
+.paleta-preview {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.cor-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.fonte-preview {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.layout-preview {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container-demo,
+.full-demo {
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-demo {
+    height: 20px;
+    background-color: var(--primary-color);
+    margin: 20px 10px;
+    border-radius: 3px;
+}
+
+.container-demo .content-demo {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-demo .content-demo {
+    width: calc(100% - 20px);
+}
+
+/* Toast de cookies (removido - substituído pelo banner) */
+.toast {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toast-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .carrinho-lateral {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .carrinho-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .paleta-preview {
+        gap: 0.3rem;
+    }
+    
+    .cor-preview {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .paleta-option,
+    .fonte-option,
+    .layout-option {
+        padding: 0.8rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Classes utilitárias para configurações */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+/* Ajustes para diferentes tamanhos de fonte */
+body[data-font-size="pequena"] {
+    --font-size-base: 0.9rem;
+}
+
+body[data-font-size="grande"] {
+    --font-size-base: 1.1rem;
+}
+
+/* Ajustes para diferentes layouts */
+body[data-layout="full"] .container {
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body[data-layout="full"] .container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body[data-layout="full"] .container .col,
+body[data-layout="full"] .container .col-md-6,
+body[data-layout="full"] .container .col-lg-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Estilos para paletas de cores específicas */
+body[data-paleta="verde"] {
+    --primary-color: #28a745;
+    --accent-color: #20c997;
+}
+
+body[data-paleta="azul"] {
+    --primary-color: #007bff;
+    --accent-color: #0056b3;
+}
+
+body[data-paleta="roxo"] {
+    --primary-color: #6f42c1;
+    --accent-color: #5a2d91;
+}
+
+body[data-paleta="laranja"] {
+    --primary-color: #fd7e14;
+    --accent-color: #e55a00;
+}
+
+body[data-paleta="rosa"] {
+    --primary-color: #e83e8c;
+    --accent-color: #c71e6b;
+}
+
+/* Transições suaves para mudanças de configuração */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Foco visível para acessibilidade */
+.btn:focus,
+.nav-link:focus,
+.form-control:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Estilos para elementos de formulário */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 75, 43, 0.25);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos para modais */
+.modal-content {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para cards de configuração */
+.card {
+    background-color: var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.card-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para inputs de cor */
+.form-control-color {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.form-control-color:hover {
+    border-color: var(--primary-color);
+}
+
+/* Estilos para botões de ação */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-outline-secondary {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color);
+} 
